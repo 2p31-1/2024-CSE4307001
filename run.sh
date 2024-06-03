@@ -10,3 +10,15 @@ python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 13 --depthfile data/ba
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 14 --depthfile data/barn_disp.pgm --output barn &
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 15 --depthfile data/barn_disp.pgm --output barn &
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 16 --depthfile data/barn_disp.pgm --output barn &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 5 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 6 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 7 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 8 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 9 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 10 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 11 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 12 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 13 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 14 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 15 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm tsukuba2.ppm --window 16 --depthfile data/tsukuba_disp.pgm --output tsukuba &
