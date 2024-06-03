@@ -1,4 +1,4 @@
-import cv2
+# import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import argparse
@@ -18,8 +18,8 @@ if not os.path.exists(dir):
     os.makedirs(dir)
 
 # Load left and right images
-left_img = cv2.imread(args.parse_args().file1)
-right_img = cv2.imread(args.parse_args().file2)
+left_img = plt.imread(args.parse_args().file1)
+right_img = plt.imread(args.parse_args().file2)
 
 try:
     depth_img = plt.imread(args.parse_args().depthfile)
@@ -72,7 +72,7 @@ for t in threads:
     t.join()
 
 # Normalize the disparity map for visualization with grayscale
-disparity = cv2.normalize(disparity, disparity, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
+# disparity = cv2.normalize(disparity, disparity, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
 plt.imshow(disparity, cmap='gray')
 plt.colorbar()
 plt.show()
@@ -80,7 +80,7 @@ plt.show()
 mse = 0
 # mse with depth file
 if depth_img is not None:
-    depth_img = cv2.normalize(depth_img, depth_img, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
+    # depth_img = cv2.normalize(depth_img, depth_img, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
     mse = np.mean((depth_img - disparity) ** 2)
 
 #write image on file
