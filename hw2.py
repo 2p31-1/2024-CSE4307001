@@ -60,6 +60,8 @@ def row_process(y):
         minx = 0
         minssd = float('inf')
         for x2 in range(np.shape(windows2)[1]):
+            if abs(x1 - x2) > 32:
+                continue
             ssd_value = ssd(windows1[y, x1], windows2[y, x2])
             if ssd_value < minssd:
                 minssd = ssd_value
