@@ -12,6 +12,8 @@ python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 14 --depthfile data/ba
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 15 --depthfile data/barn1_disp.pgm --output barn &
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 16 --depthfile data/barn1_disp.pgm --output barn &
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 32 --depthfile data/barn1_disp.pgm --output barn &
+python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 48 --depthfile data/barn1_disp.pgm --output barn &
+python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 56 --depthfile data/barn1_disp.pgm --output barn &
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 64 --depthfile data/barn1_disp.pgm --output barn &
 python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 5 --depthfile data/tsukuba_disp.pgm --output tsukuba &
 python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 6 --depthfile data/tsukuba_disp.pgm --output tsukuba &
@@ -26,4 +28,6 @@ python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 14 --depthfile data/
 python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 15 --depthfile data/tsukuba_disp.pgm --output tsukuba &
 python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 16 --depthfile data/tsukuba_disp.pgm --output tsukuba &
 python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 32 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 48 --depthfile data/tsukuba_disp.pgm --output tsukuba &
+python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 56 --depthfile data/tsukuba_disp.pgm --output tsukuba &
 python3 hw2.py data/tsukuba1.ppm data/tsukuba2.ppm --window 64 --depthfile data/tsukuba_disp.pgm --output tsukuba &

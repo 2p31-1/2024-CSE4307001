@@ -37,6 +37,7 @@ else:
     right_img = cv2.imread('data/tsukuba2.ppm', 0)
     depth_img = cv2.imread('data/tsukuba_disp.pgm', 0)
     window_size = 15
+    dir = 'tsukuba'
 
 
 def window(image, x, y):
