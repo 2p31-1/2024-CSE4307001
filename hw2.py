@@ -6,7 +6,7 @@ import threading
 import os
 from skimage.util import view_as_windows
 
-debug = False
+debug = True
 
 if debug == False:
     args = argparse.ArgumentParser()
@@ -53,8 +53,7 @@ def ssd(window1, window2):
 windows1 = view_as_windows(left_img, (window_size, window_size))
 windows2 = view_as_windows(right_img, (window_size, window_size))
 
-disparity = np.zeros(np.shape(windows1))
-
+disparity = np.zeros(np.shape(left_img)[0:2])
 
 def row_process(y):
     for x1 in range(np.shape(windows1)[1]):
@@ -65,7 +64,7 @@ def row_process(y):
             if ssd_value < minssd:
                 minssd = ssd_value
                 minx = x2
-        disparity[y, x1] = abs(x1 - minx)
+        disparity[y+window_size//2, x1+window_size//2] = abs(x1 - minx)
     print(f"do {window_size}, {y} end")
 
 
@@ -84,7 +83,6 @@ for t in threads:
 disparity = cv2.normalize(disparity, disparity, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
 plt.imshow(disparity, cmap='viridis')
 plt.colorbar()
-plt.show()
 
 mse = 0
 # mse with depth file
