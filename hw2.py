@@ -5,29 +5,38 @@ import argparse
 import threading
 import os
 
-args = argparse.ArgumentParser()
-args.add_argument("file1", help="first image file", default='data/tsukuba1.ppm')
-args.add_argument("file2", help="second image file", default='data/tsukuba2.ppm')
-args.add_argument("--window", help="window size for block matching", type=int, default=15)
-args.add_argument("--depthfile", help="(optional) depth file to compare", nargs='?')
-args.add_argument("--output", help="output directory name", default='output')
+debug = True
 
-#make output dir if not exists
-dir = args.parse_args().output
-if not os.path.exists(dir):
-    os.makedirs(dir)
 
-# Load left and right images
-left_img = plt.imread(args.parse_args().file1)
-right_img = plt.imread(args.parse_args().file2)
+if debug == False:
+    args = argparse.ArgumentParser()
+    args.add_argument("file1", help="first image file", default='data/tsukuba1.ppm')
+    args.add_argument("file2", help="second image file", default='data/tsukuba2.ppm')
+    args.add_argument("--window", help="window size for block matching", type=int, default=15)
+    args.add_argument("--depthfile", help="(optional) depth file to compare", nargs='?')
+    args.add_argument("--output", help="output directory name", default='output')
 
-try:
-    depth_img = plt.imread(args.parse_args().depthfile)
-except:
-    depth_img = None
+    #make output dir if not exists
 
-window_size = args.parse_args().window
+    dir = args.parse_args().output
+    if not os.path.exists(dir):
+        os.makedirs(dir)
 
+    # Load left and right images
+    left_img = plt.imread(args.parse_args().file1)
+    right_img = plt.imread(args.parse_args().file2)
+
+    try:
+        depth_img = plt.imread(args.parse_args().depthfile)
+    except:
+        depth_img = None
+
+    window_size = args.parse_args().window
+else:
+    left_img = plt.imread('data/tsukuba1.ppm')
+    right_img = plt.imread('data/tsukuba2.ppm')
+    depth_img = plt.imread
+    window_size = 15
 
 def window(image, x, y):
     return image[y - window_size // 2:y + window_size // 2 + 1, x - window_size // 2:x + window_size // 2 + 1]
