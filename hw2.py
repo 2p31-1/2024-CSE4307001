@@ -23,19 +23,19 @@ if debug == False:
         os.makedirs(dir)
 
     # Load left and right images
-    left_img = plt.imread(args.parse_args().file1)
-    right_img = plt.imread(args.parse_args().file2)
+    left_img = cv2.imread(args.parse_args().file1, 0)
+    right_img = cv2.imread(args.parse_args().file2, 0)
 
     try:
-        depth_img = plt.imread(args.parse_args().depthfile, cmap=plt.get_cmap('gray'))
+        depth_img = cv2.imread(args.parse_args().depthfile, 0)
     except:
         depth_img = None
 
     window_size = args.parse_args().window
 else:
-    left_img = plt.imread('data/tsukuba1.ppm', cmap=plt.get_cmap('gray'))
-    right_img = plt.imread('data/tsukuba2.ppm', cmap=plt.get_cmap('gray'))
-    depth_img = plt.imread('data/tsukuba_disparity.pgm', cmap=plt.get_cmap('gray'))
+    left_img = cv2.imread('data/tsukuba1.ppm', 0)
+    right_img = cv2.imread('data/tsukuba2.ppm', 0)
+    depth_img = cv2.imread('data/tsukuba_disp.pgm', 0)
     window_size = 15
 
 
