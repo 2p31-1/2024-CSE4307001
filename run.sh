@@ -1,3 +1,4 @@
+ps -ef | grep "python3 hw2" | awk '{system("kill "$2)}'
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 5 --depthfile data/barn_disp.pgm --output barn &
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 6 --depthfile data/barn_disp.pgm --output barn &
 python3 hw2.py data/barn1_1.ppm data/barn1_2.ppm --window 7 --depthfile data/barn_disp.pgm --output barn &
