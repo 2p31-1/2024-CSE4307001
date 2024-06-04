@@ -6,7 +6,7 @@ import threading
 import os
 from skimage.util import view_as_windows
 
-debug = True
+debug = False
 
 if debug == False:
     args = argparse.ArgumentParser()
