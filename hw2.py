@@ -43,7 +43,10 @@ def window(image, x, y):
 
 
 def ssd(window1, window2):
-    return np.sum((window1 - window2) ** 2)
+    try:
+        return np.sum((window1 - window2) ** 2)
+    except:
+        return float('inf')
 
 
 disparity = np.zeros(np.shape(left_img))
