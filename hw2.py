@@ -5,7 +5,7 @@ import argparse
 import threading
 import os
 
-debug = True
+debug = False
 
 
 if debug == False:
@@ -51,20 +51,16 @@ disparity = np.zeros(np.shape(left_img))
 
 def row_process(y):
     for x1 in range(np.shape(left_img)[1]):
-        if x1 - window_size // 2 < 0 or x1 + window_size // 2 >= np.shape(left_img)[
-            1] or y - window_size // 2 < 0 or y + window_size // 2 >= np.shape(left_img)[0]:
-            continue
         left_window = window(left_img, x1, y)
         minssd = float('inf')
         minx = -1
         for x2 in range(np.shape(right_img)[1]):
-            if x2 - window_size // 2 < 0 or x2 + window_size // 2 >= np.shape(right_img)[1]:
-                continue
             right_window = window(right_img, x2, y)
             ssd_value = ssd(left_window, right_window)
             if ssd_value < minssd:
                 minssd = ssd_value
                 minx = x2
+        # corresponding point is x2
         disparity[y, x1] = abs(x1 - minx)
     print(f"do {window_size}, {y} end")
 
@@ -82,7 +78,7 @@ for t in threads:
 
 # Normalize the disparity map for visualization with grayscale
 # disparity = cv2.normalize(disparity, disparity, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
-plt.imshow(disparity, cmap='gray')
+plt.imshow(disparity, cmap='viridis')
 plt.colorbar()
 plt.show()
 
