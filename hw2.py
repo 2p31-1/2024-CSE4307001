@@ -27,15 +27,15 @@ if debug == False:
     right_img = plt.imread(args.parse_args().file2)
 
     try:
-        depth_img = plt.imread(args.parse_args().depthfile)
+        depth_img = plt.imread(args.parse_args().depthfile, cmap=plt.get_cmap('gray'))
     except:
         depth_img = None
 
     window_size = args.parse_args().window
 else:
-    left_img = plt.imread('data/tsukuba1.ppm')
-    right_img = plt.imread('data/tsukuba2.ppm')
-    depth_img = plt.imread
+    left_img = plt.imread('data/tsukuba1.ppm', cmap=plt.get_cmap('gray'))
+    right_img = plt.imread('data/tsukuba2.ppm', cmap=plt.get_cmap('gray'))
+    depth_img = plt.imread('data/tsukuba_disparity.pgm', cmap=plt.get_cmap('gray'))
     window_size = 15
 
 
